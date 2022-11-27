@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DestinationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::group(['prefix' => 'destinations'], function () {});
+Route::group(['prefix' => 'destinations'], function () {
+    Route::get('/all', [DestinationController::class, 'index']);
+    Route::get('/detail/{destination}', [DestinationController::class, 'show']);
+});
