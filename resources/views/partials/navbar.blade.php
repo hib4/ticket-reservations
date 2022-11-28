@@ -10,7 +10,7 @@
                 <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                 <a class="nav-link text-white" href="/about">About</a>
                 <a class="nav-link text-white" href="/destinations/all">Destination</a>
-                <a class="nav-link text-white" href="/publishers/all">Publisher</a>
+                <a class="nav-link text-white" href="/tickets/all">My Ticket</a>
             </div>
         </div>
     </div>

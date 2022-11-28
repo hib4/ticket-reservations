@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Destination extends Model
+class Ticket extends Model
 {
     use HasFactory;
 
-    public function ticket()
+    protected $guarded = ['id'];
+
+    public function destination()
     {
-        return $this->hasMany(Ticket::class);
+        return $this->belongsTo(Destination::class);
     }
 }

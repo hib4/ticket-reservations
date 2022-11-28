@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h3 class="text-center mt-3 mb-4">Destination Pages</h3>
+    <h3 class="text-center mt-3 mb-4">Destination</h3>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
