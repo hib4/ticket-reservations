@@ -2,30 +2,19 @@
 
 @section('content')
     <h3 class="text-center mt-3 mb-4">Destination</h3>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Name</th>
-                <th scope="col">City</th>
-                <th scope="col">Country</th>
-                <th scope="col">Price</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($destinations as $destination)
-                <tr>
-                    <td>{{ $destination->id }}</td>
-                    <td>{{ $destination->name }}</td>
-                    <td>{{ $destination->city }}</td>
-                    <td>{{ $destination->country }}</td>
-                    <td>{{ $destination->price }}</td>
-                    <td>
-                        <a type="button" class="btn btn-primary" href="/destinations/detail/{{ $destination->id }}">Detail</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+
+    <div class="row">
+        @foreach ($destinations as $destination)
+            <div class="card m-3" style="width: 18rem;">
+                <img src="{{ $destination->image }}" class="card-img-top mt-2" alt="...">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ $destination->name }}</h5>
+                    <p class="card-text">{{ $destination->description }}</p>
+                    <div class="mt-auto">
+                        <a href="/destinations/detail/{{ $destination->id }}" class="btn btn-primary">Detail</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 @endsection

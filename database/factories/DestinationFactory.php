@@ -21,6 +21,7 @@ class DestinationFactory extends Factory
             'description' => fake()->paragraph(),
             'city' => fake()->city(),
             'country' => 'Indonesia',
+            'image' => fake()->imageUrl(360, 360, 'destinations', true),
             'price' => fake()->randomFloat(2, 1000, 10000),
         ];
     }
