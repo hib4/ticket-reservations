@@ -8,12 +8,6 @@
             <input type="hidden" class="form-control" id="destination_id" name="destination_id" required
                 value="{{ $destination->id }}">
 
-            <input type="hidden" class="form-control" id="name" name="name" required
-                value="{{ $destination->name }}">
-
-            <input type="hidden" class="form-control" id="price" name="price" required
-                value="{{ $destination->price }}">
-
             <div class="form-group mb-3">
                 <label for="full_name">Full Name</label>
                 <input type="name" class="form-control" id="full_name" placeholder="Enter Full Name" name="full_name"

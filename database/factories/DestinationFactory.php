@@ -23,6 +23,7 @@ class DestinationFactory extends Factory
             'country' => 'Indonesia',
             'image' => fake()->imageUrl(360, 360, 'destinations', true),
             'price' => fake()->randomFloat(2, 1000, 10000),
+            'discount' => fake()->randomFloat(2, 0, 1),
         ];
     }
 }

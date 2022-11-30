@@ -33,8 +33,6 @@ class TicketController extends Controller
     {
         $validateData = $request->validate([
             'destination_id'    => 'required',
-            'name'              => 'required',
-            'price'             => 'required',
             'full_name'         => 'required|max:255',
             'email'             => 'required',
             'phone_number'      => 'required',

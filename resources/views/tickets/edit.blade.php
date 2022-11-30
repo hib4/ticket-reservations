@@ -8,7 +8,7 @@
             <div class="form-group mb-3">
                 <label for="name">Destination Name</label>
                 <input type="name" class="form-control" id="name" placeholder="Enter a Name" name="name" required disabled
-                    value="{{ old('name', $ticket->name) }}">
+                    value="{{ old('name', $ticket->destination->name) }}">
             </div>
 
             <div class="form-group mb-3">
@@ -38,7 +38,13 @@
             <div class="form-group mb-3">
                 <label for="price">Price</label>
                 <input type="number" class="form-control" placeholder="Enter Price" name="price" required disabled
-                    value="{{ old('price', $ticket->price) }}">
+                    value="{{ old('price', $ticket->destination->price) }}">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="discount">Discount</label>
+                <input type="name" class="form-control" placeholder="Enter Discount" name="discount" required disabled
+                    value="{{ old('price', $ticket->destination->discount) }}">
             </div>
 
             <div class="form-group mb-4">
