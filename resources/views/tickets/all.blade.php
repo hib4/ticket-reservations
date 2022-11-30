@@ -17,17 +17,27 @@
                 <th scope="col">Destination</th>
                 <th scope="col">Number of Person</th>
                 <th scope="col">Price</th>
+                <th scope="col">Discount</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
+            @php
+                $index = 1;
+            @endphp
             @foreach ($tickets as $ticket)
+                @php
+                    $price = $ticket->destination->price * $ticket->nop;
+                    $discount = $ticket->destination->price * $ticket->nop * $ticket->destination->discount;
+                @endphp
+
                 <tr>
-                    <td>{{ $ticket->id }}</td>
+                    <td>{{ $index++ }}</td>
                     <td>{{ $ticket->full_name }}</td>
-                    <td>{{ $ticket->name }}</td>
+                    <td>{{ $ticket->destination->name }}</td>
                     <td>{{ $ticket->nop }}</td>
-                    <td>{{ $ticket->price * $ticket->nop}}</td>
+                    <td>{{ $price }}</td>
+                    <td>{{ $discount }}</td>
                     <td>
                         <a type="button" class="btn btn-primary" href="/tickets/detail/{{ $ticket->id }}">Detail</a>
                         <a type="button" class="btn btn-warning" href="/tickets/edit/{{ $ticket->id }}">Edit</a>

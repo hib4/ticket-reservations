@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('country');
             $table->string('image');
             $table->float('price');
+            $table->float('discount');
             $table->timestamps();
         });
     }

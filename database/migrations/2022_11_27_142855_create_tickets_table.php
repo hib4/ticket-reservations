@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('destination_id');
-            $table->string('name');
-            $table->float('price');
             $table->string('full_name');
             $table->string('email');
             $table->string('phone_number');
