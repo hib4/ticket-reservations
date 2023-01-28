@@ -1,7 +1,7 @@
-@extends('layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('content')
-    <h3 class="text-center mt-3 mb-4">My Ticket</h3>
+    <h3 class="text-center mt-3 mb-4">My Tickets</h3>
 
     @if (session()->has('success'))
         <div class="alert alert-success col-lg-12" role="alert">
@@ -39,7 +39,14 @@
                     <td>{{ $price }}</td>
                     <td>{{ $discount }}</td>
                     <td>
-                        <a type="button" class="btn btn-primary" href="/tickets/detail/{{ $ticket->id }}">Detail</a>
+                        <a type="button" class="btn btn-primary" href="/dashboard/tickets/detail/{{ $ticket->id }}">Detail</a>
+                        <a type="button" class="btn btn-warning" href="/dashboard/tickets/edit/{{ $ticket->id }}">Edit</a>
+                        <form action="/dashboard/tickets/delete/{{ $ticket->id }}" method="POST" class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger"
+                                onClick="return confirm('Are you sure?')">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
