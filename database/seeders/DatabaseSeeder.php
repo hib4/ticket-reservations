@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Destination::factory(10)->create();
+        Ticket::factory(10)->create();
     }
 }

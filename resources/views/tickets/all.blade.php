@@ -23,8 +23,9 @@
         </thead>
         <tbody>
             @php
-                $index = 1;
+                $index = $tickets->firstItem();
             @endphp
+            
             @foreach ($tickets as $ticket)
                 @php
                     $price = $ticket->destination->price * $ticket->nop;
@@ -45,4 +46,6 @@
             @endforeach
         </tbody>
     </table>
+
+    {{ $tickets->links() }}
 @endsection

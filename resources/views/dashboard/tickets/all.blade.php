@@ -23,8 +23,9 @@
         </thead>
         <tbody>
             @php
-                $index = 1;
+                $index = $tickets->firstItem();
             @endphp
+            
             @foreach ($tickets as $ticket)
                 @php
                     $price = $ticket->destination->price * $ticket->nop;
@@ -39,8 +40,10 @@
                     <td>{{ $price }}</td>
                     <td>{{ $discount }}</td>
                     <td>
-                        <a type="button" class="btn btn-primary" href="/dashboard/tickets/detail/{{ $ticket->id }}">Detail</a>
-                        <a type="button" class="btn btn-warning" href="/dashboard/tickets/edit/{{ $ticket->id }}">Edit</a>
+                        <a type="button" class="btn btn-primary"
+                            href="/dashboard/tickets/detail/{{ $ticket->id }}">Detail</a>
+                        <a type="button" class="btn btn-warning"
+                            href="/dashboard/tickets/edit/{{ $ticket->id }}">Edit</a>
                         <form action="/dashboard/tickets/delete/{{ $ticket->id }}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf
@@ -52,4 +55,6 @@
             @endforeach
         </tbody>
     </table>
+
+    {{ $tickets->links() }}
 @endsection
