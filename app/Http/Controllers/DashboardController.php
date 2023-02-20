@@ -11,7 +11,8 @@ class DashboardController extends Controller
     public static function index()
     {
         return view('dashboard.tickets.all', [
-            'tickets' => Ticket::paginate(5)
+            'tickets' => Ticket::filter(request(['search', 'destination_id']))->paginate(5),
+            'destinations' => Destination::all(),
         ]);
     }
 
