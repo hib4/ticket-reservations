@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Destination;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class TicketController extends Controller
 {
     public static function index()
     {
         return view('tickets.all', [
-            'tickets' => Ticket::paginate(5),
+            'tickets' => Ticket::filter(request(['search', 'destination_id']))->paginate(5),
+            'destinations' => Destination::all(),
         ]);
     }
 

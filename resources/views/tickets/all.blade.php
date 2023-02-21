@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h3 class="text-center mt-3 mb-5">My Tickets</h3>
+    <h3 class="text-center mt-3 mb-4">My Tickets</h3>
 
     @if (session()->has('success'))
         <div class="alert alert-success col-lg-12" role="alert">
@@ -10,6 +10,34 @@
     @endif
 
     <table class="table table-striped table-hover mb-4">
+        <div class="col-md-12 mb-2">
+            <div class="row">
+                <form action="/tickets/all">
+                    <div class="col-md-4">
+                        <select name="destination_id" id="">
+                            <option name="destination_id" value="0"> -- Destinations -- </option>
+                            @foreach ($destinations as $destination)
+                                @if (request('destination_id') == $destination->id)
+                                    <option name="destination_id" value="{{ $destination->id }}" selected>
+                                        {{ $destination->name }}</option>
+                                @else
+                                    <option name="destination_id" value="{{ $destination->id }}">{{ $destination->name }}
+                                    </option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="text" name="search" id="search" placeholder="Search"
+                                value="{{ request()->input('search') }}">
+                            <button class="btn btn-primary" type="submit" id="search">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <thead>
             <tr>
                 <th scope="col">No.</th>
@@ -25,7 +53,7 @@
             @php
                 $index = $tickets->firstItem();
             @endphp
-            
+
             @foreach ($tickets as $ticket)
                 @php
                     $price = $ticket->destination->price * $ticket->nop;
@@ -46,6 +74,10 @@
             @endforeach
         </tbody>
     </table>
+
+    @if ($tickets->isEmpty())
+        <h5 class="text-center">Data not found</h5>
+    @endif
 
     {{ $tickets->links() }}
 @endsection
