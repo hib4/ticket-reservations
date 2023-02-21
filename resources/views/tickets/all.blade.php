@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h3 class="text-center mt-3 mb-4">My Ticket</h3>
+    <h3 class="text-center mt-3 mb-5">My Tickets</h3>
 
     @if (session()->has('success'))
         <div class="alert alert-success col-lg-12" role="alert">
@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover mb-4">
         <thead>
             <tr>
                 <th scope="col">No.</th>

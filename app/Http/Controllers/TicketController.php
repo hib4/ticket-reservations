@@ -12,7 +12,7 @@ class TicketController extends Controller
     public static function index()
     {
         return view('tickets.all', [
-            'tickets' => Ticket::paginate(5)
+            'tickets' => Ticket::paginate(5),
         ]);
     }
 

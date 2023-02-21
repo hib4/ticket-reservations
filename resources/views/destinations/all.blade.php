@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
-    <h3 class="text-center mt-3 mb-4">Destination</h3>
+    <h3 class="text-center mt-3 mb-5">Destinations</h3>
 
-    <div class="row">
+    <div class="row gap-5 mb-4">
         @foreach ($destinations as $destination)
-            <div class="card m-3" style="width: 18rem;">
-                <img src="{{ $destination->image }}" class="card-img-top mt-2" alt="...">
+            <div class="card" style="width: 420px;">
+                <img src="https://source.unsplash.com/800x400?destinations" class="card-img-top mt-2" alt="...">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ $destination->name }}</h5>
                     <p class="card-text">{{ $destination->description }}</p>
@@ -16,5 +16,9 @@
                 </div>
             </div>
         @endforeach
+    </div>
+
+    <div class="mb-3">
+        {{ $destinations->links() }}
     </div>
 @endsection
