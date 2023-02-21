@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover mb-4">
         <div class="col-md-12">
             <div class="row">
                 <form action="/dashboard/tickets/all">

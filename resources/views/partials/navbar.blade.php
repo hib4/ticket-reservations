@@ -9,8 +9,8 @@
             <div class="navbar-nav">
                 <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                 <a class="nav-link text-white" href="/about">About</a>
-                <a class="nav-link text-white" href="/destinations/all">Destination</a>
-                <a class="nav-link text-white" href="/tickets/all">My Ticket</a>
+                <a class="nav-link text-white" href="/destinations/all">Destinations</a>
+                <a class="nav-link text-white" href="/tickets/all">Tickets</a>
             </div>
 
             <ul class="navbar-nav ms-auto">

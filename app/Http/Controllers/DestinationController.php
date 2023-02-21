@@ -10,7 +10,7 @@ class DestinationController extends Controller
     public static function index()
     {
         return view('destinations.all', [
-            'destinations' => Destination::all()
+            'destinations' => Destination::paginate(8),
         ]);
     }
 
