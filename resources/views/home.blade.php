@@ -7,5 +7,5 @@
         </div>
     @endif
 
-    <h2>Home</h2>
+    <h2 class="text-center">Home</h2>
 @endsection
