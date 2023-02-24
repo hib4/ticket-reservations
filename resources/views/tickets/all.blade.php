@@ -14,7 +14,8 @@
             <div class="row">
                 <form action="/tickets/all">
                     <div class="col-md-4">
-                        <select name="destination_id" id="">
+                        <select name="destination_id" id=""
+                            class="form-control rounded-md border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             <option name="destination_id" value="0"> -- Destinations -- </option>
                             @foreach ($destinations as $destination)
                                 @if (request('destination_id') == $destination->id)
