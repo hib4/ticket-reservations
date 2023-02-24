@@ -8,7 +8,8 @@
             <div class="row">
                 <form action="/destinations/all">
                     <div class="col-md-4">
-                        <select name="id" id="">
+                        <select name="id" id=""
+                            class="form-control rounded-md border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             <option name="id" value="0"> -- Destinations -- </option>
                             @foreach ($destinations as $destination)
                                 @if (request('id') == $destination->id)

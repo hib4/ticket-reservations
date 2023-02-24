@@ -14,7 +14,8 @@
             <div class="row">
                 <form action="/dashboard/tickets/all">
                     <div class="col-md-4">
-                        <select name="destination_id" id="">
+                        <select name="destination_id" id=""
+                            class="form-control rounded-md border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             <option name="destination_id" value="0"> -- Destinations -- </option>
                             @foreach ($destinations as $destination)
                                 @if (request('destination_id') == $destination->id)
@@ -29,7 +30,8 @@
                     </div>
                     <div class="col-md-8">
                         <div class="input-group mb-3">
-                            <input class="form-control" type="text" name="search" id="search" placeholder="Search" value="{{ request()->input('search') }}">
+                            <input class="form-control" type="text" name="search" id="search" placeholder="Search"
+                                value="{{ request()->input('search') }}">
                             <button class="btn btn-primary" type="submit" id="search">Search</button>
                         </div>
                     </div>
